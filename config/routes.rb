@@ -1,4 +1,10 @@
 Aumodoro::Application.routes.draw do
+  resources :sessions
+
+  resources :groups
+
+  resources :projects
+
   devise_for :users
   
   root :to => 'high_voltage/pages#show', :id => 'home'

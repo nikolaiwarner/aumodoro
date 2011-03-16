@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @project.user_id %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @project.group_id %>
+</p>
+
+<p>
+  <b>session count:</b>
+  <%= @project.session_count %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @project.color %>
+</p>
+
+<p>
+  <b>Total sessions estimate:</b>
+  <%= @project.total_sessions_estimate %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @project.priority %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
