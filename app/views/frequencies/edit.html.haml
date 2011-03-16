@@ -1,0 +1,17 @@
+%h1= @frequency.name
+
+.frequencies_page
+  = render 'form'
+  
+  %p
+    and includes #{pluralize(@frequency.friends.length, 'friend')}
+    %br/
+    = render 'friends/name_list', :friends => @frequency.friends     
+
+
+
+
+.admin
+  = link_to 'delete', @frequency, :confirm => 'Are you sure?', :method => :delete
+
+

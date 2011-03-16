@@ -1,0 +1,25 @@
+%h1
+  = h content_for(:title, @friend.name )
+
+.friend_page
+  .info
+    .friend_portrait
+      = image_tag(@friend.portrait_url) if @friend.portrait?
+    .status
+      #{pluralize @friend.score, 'point'}
+      \-
+      = @friend.frequency.name
+  .notes
+    = form_for(@friend) do |f|
+      .field
+        = f.text_area :notes
+      .actions
+        = f.submit :value => "save notes"
+          
+  .history
+    = render 'interactions/list', :interactions => @interactions
+    %br/
+    = paginate @interactions      
+      
+  .nav
+    = link_to "edit #{@friend.name}", edit_friend_path(@friend), {"data-role" => "button"}

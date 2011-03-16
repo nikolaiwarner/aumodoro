@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    %title Aumodoro
+    
+    = stylesheet_link_tag 'application'
+    %link{ :rel => "shortcut icon", :href => '/images/favicon.png' }
+    %link{ :rel => "apple-touch-icon", :href => '/images/favicon.png' }
+    %link{ :media => "screen", :rel => "stylesheet", :type => "text/css", :href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/smoothness/jquery-ui.css" }
+    
+    %script{ :type => "text/javascript", :src => "https://www.google.com/jsapi?key=ABQIAAAALFcVECtS_cckPZPP6gEvtBQNqA7PXSQWBnZcv0WRsLc5vt2EwhRNL4XDqi3F3gVWu6gud-eJy35NIA" }
+    :javascript
+      google.load("jquery", "1.5.0");
+      google.load("jqueryui", "1.8.9");
+      google.load("webfont", "1.0.18");
+      google.setOnLoadCallback(function() {
+        WebFont.load({
+          google: {
+            families: [ 'Neuton', 'Josefin Slab' ]
+          }});
+      });
+
+    = csrf_meta_tag
+  %body
+    .wrapper(data-role="page")
+      .header(data-role="header")
+        = link_to "aumodoro", root_url
+        .links
+          - if current_user
+            = link_to "interact", new_interaction_path
+      .content(data-role="content")
+        = render 'layouts/notices'
+        = yield
+      .footer_push
+    .footer(data-role="footer")
+      - if current_user
+        = link_to("friends", friends_path)
+        = link_to("interactions", interactions_path) 
+        = link_to("settings", page_path('settings')) 
+        = link_to("sign out", destroy_user_session_path)
+      - else
+        = link_to("sign in", new_user_session_path)

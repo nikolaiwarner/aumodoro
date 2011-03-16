@@ -1,0 +1,9 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+config/database.yml
+public/uploads/*
+config/initializers/secret_token.rb
+config/initializers/carrierwave_s3.rb
+

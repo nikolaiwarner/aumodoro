@@ -1,0 +1,35 @@
+= form_for(@interaction) do |f|
+  - if @interaction.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@interaction.errors.count, "error")
+        prohibited this interaction from being saved:
+      %ul
+        - @interaction.errors.full_messages.each do |msg|
+          %li= msg
+          
+          
+  .field
+    = f.label :friend_id, "the friend(s): " 
+    = text_field_tag :interaction_friend_name, "#{@interaction.friend.name if @interaction.friend}", { :class => "friendname_autocomplete" }
+    
+  .field
+    = f.label :datetime, "when: "
+    /= f.text_field :datetime, {:class => "datepicker"}
+    = date_select(:interaction, :datetime, :default => Date.today)
+    
+  .field
+    = f.label :interaction_type_id, "type: "
+    = f.select :interaction_type_id, InteractionType.where(:user_id => current_user.id).all.collect {|p| [ p.name, p.id ] }
+    
+  
+  .field
+    = f.label :description, "details: "
+    %br/
+    = f.text_area :description
+  
+  .field
+    = f.label :points, 'bonus points:'
+    = f.text_field :points, :value => '0'
+  .actions
+    = f.submit :value => 'save'

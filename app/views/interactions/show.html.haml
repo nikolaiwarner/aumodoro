@@ -1,0 +1,18 @@
+%p
+  %b Friend:
+  = @interaction.friend.name || "Unknown"
+%p
+  %b When:
+  = @interaction.datetime
+%p
+  %b About:
+  = @interaction.description
+%p
+  %b Interaction type:
+  = @interaction.interaction_type.name
+%p
+  %b Points:
+  = @interaction.points
+= link_to 'Edit', edit_interaction_path(@interaction)
+|
+\#{link_to 'Back', interactions_path}
