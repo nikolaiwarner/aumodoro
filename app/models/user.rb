@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   has_many :groups
   has_many :projects
-  has_many :sessions
+  has_many :poms
   
   
   ROLES = %w[admin user banned]

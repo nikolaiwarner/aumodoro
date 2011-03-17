@@ -1,82 +1,82 @@
-class SessionsController < ApplicationController
-  # GET /sessions
-  # GET /sessions.xml
+class PomsController < ApplicationController
+  # GET /poms
+  # GET /poms.xml
   def index
-    @sessions = Session.all
+    @poms = Pom.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @sessions }
+      format.xml  { render :xml => @poms }
     end
   end
 
-  # GET /sessions/1
-  # GET /sessions/1.xml
+  # GET /poms/1
+  # GET /poms/1.xml
   def show
-    @session = Session.find(params[:id])
+    @pom = Pom.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @session }
+      format.xml  { render :xml => @pom }
     end
   end
 
-  # GET /sessions/new
-  # GET /sessions/new.xml
+  # GET /poms/new
+  # GET /poms/new.xml
   def new
-    @session = Session.new
+    @pom = Pom.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @session }
+      format.xml  { render :xml => @pom }
     end
   end
 
-  # GET /sessions/1/edit
+  # GET /poms/1/edit
   def edit
-    @session = Session.find(params[:id])
+    @pom = Pom.find(params[:id])
   end
 
-  # POST /sessions
-  # POST /sessions.xml
+  # POST /poms
+  # POST /poms.xml
   def create
-    @session = Session.new(params[:session])
+    @pom = Pom.new(params[:pom])
 
     respond_to do |format|
-      if @session.save
-        format.html { redirect_to(@session, :notice => 'Session was successfully created.') }
-        format.xml  { render :xml => @session, :status => :created, :location => @session }
+      if @pom.save
+        format.html { redirect_to(@pom, :notice => 'pom was successfully created.') }
+        format.xml  { render :xml => @pom, :status => :created, :location => @pom }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @session.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @pom.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /sessions/1
-  # PUT /sessions/1.xml
+  # PUT /poms/1
+  # PUT /poms/1.xml
   def update
-    @session = Session.find(params[:id])
+    @pom = Pom.find(params[:id])
 
     respond_to do |format|
-      if @session.update_attributes(params[:session])
-        format.html { redirect_to(@session, :notice => 'Session was successfully updated.') }
+      if @pom.update_attributes(params[:pom])
+        format.html { redirect_to(@pom, :notice => 'pom was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @session.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @pom.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /sessions/1
-  # DELETE /sessions/1.xml
+  # DELETE /poms/1
+  # DELETE /poms/1.xml
   def destroy
-    @session = Session.find(params[:id])
-    @session.destroy
+    @pom = Pom.find(params[:id])
+    @pom.destroy
 
     respond_to do |format|
-      format.html { redirect_to(sessions_url) }
+      format.html { redirect_to(poms_url) }
       format.xml  { head :ok }
     end
   end

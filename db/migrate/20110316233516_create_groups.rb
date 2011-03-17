@@ -3,7 +3,7 @@ class CreateGroups < ActiveRecord::Migration
     create_table :groups do |t|
       t.string :name
       t.float :default_session_value
-      t.stirng :default_color
+      t.string :default_color
       t.integer :user_id
 
       t.timestamps

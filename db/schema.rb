@@ -10,7 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110207020233) do
+ActiveRecord::Schema.define(:version => 20110316235223) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.float    "default_session_value"
+    t.string   "default_color"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "session_count"
+    t.text     "description"
+    t.string   "color"
+    t.float    "default_session_value"
+    t.integer  "total_sessions_estimate"
+    t.integer  "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.datetime "datetime"
+    t.boolean  "success"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.text     "description"
+    t.float    "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

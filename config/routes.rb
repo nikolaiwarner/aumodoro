@@ -1,5 +1,5 @@
 Aumodoro::Application.routes.draw do
-  resources :sessions
+  resources :poms
 
   resources :groups
 
