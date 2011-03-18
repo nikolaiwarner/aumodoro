@@ -1,4 +1,4 @@
-class Session < ActiveRecord::Base
+class Pom < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :project

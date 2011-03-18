@@ -1,6 +1,7 @@
 class PomsController < ApplicationController
-  # GET /poms
-  # GET /poms.xml
+  load_and_authorize_resource
+
+
   def index
     @poms = Pom.all
 

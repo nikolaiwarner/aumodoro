@@ -16,7 +16,7 @@
       google.setOnLoadCallback(function() {
         WebFont.load({
           google: {
-            families: [ 'Neuton', 'Josefin Slab' ]
+            families: [ 'Philosopher' ]
           }});
       });
 
@@ -24,19 +24,16 @@
   %body
     .wrapper(data-role="page")
       .header(data-role="header")
-        = link_to "aumodoro", root_url
+        = link_to "Aumodoro", root_url
         .links
           - if current_user
-            = link_to "interact", new_interaction_path
+            = link_to("sign out", destroy_user_session_path)
+          - else
+            = link_to("sign in", new_user_session_path)
+            |
+            = link_to("sign up", new_user_registration_path)
       .content(data-role="content")
         = render 'layouts/notices'
         = yield
       .footer_push
     .footer(data-role="footer")
-      - if current_user
-        = link_to("friends", friends_path)
-        = link_to("interactions", interactions_path) 
-        = link_to("settings", page_path('settings')) 
-        = link_to("sign out", destroy_user_session_path)
-      - else
-        = link_to("sign in", new_user_session_path)

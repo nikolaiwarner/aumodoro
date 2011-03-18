@@ -4,12 +4,12 @@ html, body {
 body {
   background-color: white;
   color: #333333;
-  font-family: "Josefin Slab", arial, helvetica, sans-serif;
+  font-family: "Philosopher", arial, helvetica, sans-serif;
   font-size: 25px;
   line-height: 25px; }
 
 p, ol, ul, td, textarea, input, select {
-  font-family: "Josefin Slab", arial, helvetica, sans-serif;
+  font-family: "Philosopher", arial, helvetica, sans-serif;
   font-size: 25px;
   line-height: 25px; }
 
@@ -156,7 +156,7 @@ div.field, div.actions {
     -webkit-padding-start: 0px; }
   .ui-autocomplete li {
     padding: 5px;
-    font-family: "Josefin Slab", arial, helvetica, sans-serif;
+    font-family: "Philosopher", arial, helvetica, sans-serif;
     border-bottom: 1px solid #eeeeee; }
 
 .ui-timepicker-div .ui-widget-header {
