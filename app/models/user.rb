@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   ROLES = %w[admin user banned]
   
   before_create :set_default_role
-  before_create :ensure_authentication_token
+#  before_create :ensure_authentication_token
 
   after_create :setup_default_data
   
@@ -45,8 +45,8 @@ class User < ActiveRecord::Base
     username
   end
   
-  def ensure_authentication_token
-    reset_authentication_token! if authentication_token.blank?
-  end
+#   def ensure_authentication_token
+#     reset_authentication_token! if authentication_token.blank?
+#   end
   
 end

@@ -19,6 +19,8 @@
             families: [ 'Philosopher' ]
           }});
       });
+    = javascript_include_tag 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
+      
 
     = csrf_meta_tag
   %body
@@ -27,6 +29,10 @@
         = link_to "Aumodoro", root_url
         .links
           - if current_user
+            = link_to("Projects", projects_path)
+            \.
+            = link_to("Groups", groups_path)
+            \.
             = link_to("sign out", destroy_user_session_path)
           - else
             = link_to("sign in", new_user_session_path)

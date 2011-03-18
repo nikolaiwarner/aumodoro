@@ -42,6 +42,7 @@ class PomsController < ApplicationController
   # POST /poms.xml
   def create
     @pom = Pom.new(params[:pom])
+    @pom.user_id = current_user.id
 
     respond_to do |format|
       if @pom.save
@@ -58,6 +59,7 @@ class PomsController < ApplicationController
   # PUT /poms/1.xml
   def update
     @pom = Pom.find(params[:id])
+    @pom.user_id = current_user.id
 
     respond_to do |format|
       if @pom.update_attributes(params[:pom])

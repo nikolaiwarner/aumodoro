@@ -1,10 +1,10 @@
-<%= form_for(@session) do |f| %>
-  <% if @session.errors.any? %>
+<%= form_for(@pom) do |f| %>
+  <% if @pom.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@session.errors.count, "error") %> prohibited this session from being saved:</h2>
+      <h2><%= pluralize(@pom.errors.count, "error") %> prohibited this session from being saved:</h2>
 
       <ul>
-      <% @session.errors.full_messages.each do |msg| %>
+      <% @pom.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -16,16 +16,8 @@
     <%= f.datetime_select :datetime %>
   </div>
   <div class="field">
-    <%= f.label :success %><br />
-    <%= f.text_field :success %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :project_id %><br />
-    <%= f.text_field :project_id %>
+    <%= select :pom, :project_id, Project.all.collect {|p| [ p.name, p.id ] }, {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :description %><br />

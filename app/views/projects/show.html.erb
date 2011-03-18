@@ -6,17 +6,12 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @project.user_id %>
-</p>
-
-<p>
   <b>Group:</b>
-  <%= @project.group_id %>
+  <%= @project.group.name if @project.group %>
 </p>
 
 <p>
-  <b>pom count:</b>
+  <b>Pom count:</b>
   <%= @project.pom_count %>
 </p>
 

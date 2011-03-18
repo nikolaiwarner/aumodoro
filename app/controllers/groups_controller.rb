@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.xml
   def index
-    @groups = Group.all
+    @groups = Group.where(:user_id => current_user.id).order('name ASC').page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.xml
   def show
-    @group = Group.find(params[:id])
+    @group = Group.where(:user_id => current_user.id).find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,10 +39,10 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  # POST /groups
-  # POST /groups.xml
+  
   def create
     @group = Group.new(params[:group])
+    @group.user_id = current_user.id
 
     respond_to do |format|
       if @group.save
@@ -59,6 +59,8 @@ class GroupsController < ApplicationController
   # PUT /groups/1.xml
   def update
     @group = Group.find(params[:id])
+    @group.user_id = current_user.id
+
 
     respond_to do |format|
       if @group.update_attributes(params[:group])

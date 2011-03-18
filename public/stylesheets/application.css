@@ -23,7 +23,7 @@ textarea, input {
     background-color: white;
     cursor: pointer; }
     textarea[type=submit]:hover, input[type=submit]:hover {
-      color: #db7093; }
+      color: #00afee; }
   textarea:hover, input:hover {
     border: 1px solid #aaaaaa; }
 
@@ -38,13 +38,13 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #db7093;
+  color: #00afee;
   text-decoration: none; }
   a:visited {
-    color: #db7093; }
+    color: #00afee; }
   a:hover {
     color: white;
-    background-color: #db7093; }
+    background-color: #00afee; }
 
 h1, h2 {
   text-align: center; }
@@ -54,7 +54,7 @@ div.field, div.actions {
 
 .notice, .alert {
   text-align: center;
-  color: #db7093;
+  color: #00afee;
   padding: 10px; }
 
 .field_with_errors {
@@ -64,11 +64,11 @@ div.field, div.actions {
 
 #error_explanation {
   width: 450px;
-  border: 2px solid #db7093;
+  border: 2px solid #00afee;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #db7093; }
+  background-color: #00afee; }
   #error_explanation h2 {
     text-align: left;
     font-weight: bold;
@@ -76,7 +76,7 @@ div.field, div.actions {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #db7093;
+    background-color: #00afee;
     color: white; }
   #error_explanation ul li {
     font-size: 12px;
@@ -103,7 +103,7 @@ div.field, div.actions {
   .header .links {
     float: right; }
     .header .links a {
-      color: #db7093; }
+      color: #00afee; }
       .header .links a:hover {
         color: white; }
 
@@ -175,7 +175,7 @@ div.field, div.actions {
   font-size: 90%; }
 
 a.friend_needs_interaction {
-  background-color: #db7093;
+  background-color: #00afee;
   color: white; }
 
 .history .interaction {

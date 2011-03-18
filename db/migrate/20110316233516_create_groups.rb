@@ -2,7 +2,7 @@ class CreateGroups < ActiveRecord::Migration
   def self.up
     create_table :groups do |t|
       t.string :name
-      t.float :default_session_value
+      t.float :default_pom_value
       t.string :default_color
       t.integer :user_id
 

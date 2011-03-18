@@ -16,16 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :group_id %><br />
-    <%= f.text_field :group_id %>
-  </div>
-  <div class="field">
-    <%= f.label :pom_count %><br />
-    <%= f.text_field :pom_count %>
+    <%= select :project, :group_id, Group.all.collect {|p| [ p.name, p.id ] }, {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -33,15 +25,15 @@
   </div>
   <div class="field">
     <%= f.label :color %><br />
-    <%= f.text_field :color %>
+    <%= f.text_field :color, { :class => 'color_picker' } %>
   </div>
   <div class="field">
-    <%= f.label :total_pom_estimate %><br />
+    <%= f.label :total_pom_estimate, "Estimated Poms to complete" %><br />
     <%= f.text_field :total_pom_estimate %>
   </div>
   <div class="field">
     <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
+    <%= select :project, :priority, Project.priorities %>
   </div>
   <div class="actions">
     <%= f.submit %>

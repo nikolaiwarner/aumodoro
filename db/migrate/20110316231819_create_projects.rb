@@ -4,10 +4,10 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name
       t.integer :user_id
       t.integer :group_id
-      t.integer :session_count
+      t.integer :pom_count
       t.text :description
       t.string :color
-      t.float :default_session_value
+      t.float :default_pom_value
       t.integer :total_pom_estimate
       t.integer :priority
 

@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   
   def index
-    @projects = Project.all
+    @projects = Project.where(:user_id => current_user.id).order('name ASC').page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
 
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.where(:user_id => current_user.id).find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,6 +39,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
+    @project.user_id = current_user.id
 
     respond_to do |format|
       if @project.save
@@ -54,6 +55,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
+    @project.user_id = current_user.id
 
     respond_to do |format|
       if @project.update_attributes(params[:project])

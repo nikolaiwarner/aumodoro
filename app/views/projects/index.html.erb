@@ -1,33 +1,21 @@
-<h1>Listing projects</h1>
+<h1>Your Projects</h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>User</th>
     <th>Group</th>
-    <th>pom count</th>
-    <th>Description</th>
-    <th>Color</th>
-    <th>Total poms estimate</th>
-    <th>Priority</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Poms</th>
+    <th>% Complete</th>
+    <th>Priority</th> 
   </tr>
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%= project.name %></td>
-    <td><%= project.user_id %></td>
-    <td><%= project.group_id %></td>
+    <td><%= link_to project.name, project %></td>
+    <td><%= project.group.name if project.group %></td>
     <td><%= project.pom_count %></td>
-    <td><%= project.description %></td>
-    <td><%= project.color %></td>
-    <td><%= project.total_pom_estimate %></td>
+    <td><%= project.percent_complete_estimate %></td>
     <td><%= project.priority %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

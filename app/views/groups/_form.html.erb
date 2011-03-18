@@ -16,16 +16,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :default_session_value %><br />
-    <%= f.text_field :default_session_value %>
+    <%= f.label :default_pom_value %><br />
+    <%= f.text_field :default_pom_value %>
   </div>
   <div class="field">
-    <%= f.label :default_color_value %><br />
-    <%= f.text_field :default_color_value %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :default_color %><br />
+    <%= f.text_field :default_color, { :class => 'color_picker'} %>
   </div>
   <div class="actions">
     <%= f.submit %>
