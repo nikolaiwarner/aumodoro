@@ -29,6 +29,8 @@
         = link_to "Aumodoro", root_url
         .links
           - if current_user
+            = link_to("Start", new_pom_path)
+            \.
             = link_to("Projects", projects_path)
             \.
             = link_to("Groups", groups_path)

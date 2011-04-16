@@ -2,9 +2,9 @@ var Aumodoro = {
 
   timer: {
     seconds_elapsed: 0,
-    count_up: true,
+    count_up: false,
     pom_length_in_minutes: 25,
-    display_element: undefined,
+    display_element: '#timer',
     interval: undefined,
     minutes: 0,
     seconds: 0,

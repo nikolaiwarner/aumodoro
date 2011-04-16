@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :group_id %><br />
-    <%= select :project, :group_id, Group.all.collect {|p| [ p.name, p.id ] }, {:include_blank => true} %>
+    <%= select :project, :group_id, current_user.groups.all.collect {|p| [ p.name, p.id ] }, {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
