@@ -45,6 +45,22 @@ class User < ActiveRecord::Base
     username
   end
   
+  
+    
+  
+  def pom_length_in_minutes
+    25
+  end
+    
+  def current_pom
+    poms.datetime_before(Time.now).datetime_after(Time.now - pom_length_in_minutes.minutes).order("datetime desc").first
+  end
+  
+  def next_pom
+    poms.datetime_after(Time.now).order("datetime desc").first
+  end
+  
+  
 #   def ensure_authentication_token
 #     reset_authentication_token! if authentication_token.blank?
 #   end

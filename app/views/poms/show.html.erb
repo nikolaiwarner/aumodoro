@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 
-<% time_remaining = @pom.datetime + 25.minutes - Time.now %>
-<% if time_remaining > 0 %>
+
+<% if @pom.seconds_remaining > 0 %>
 
   <script>
-    Aumodoro.timer.seconds_elapsed = 1500 - <%= time_remaining.to_i %>;
-    Aumodoro.timer.start();
+    Aumodoro.timer.seconds_elapsed = <%= @pom.seconds_elapsed %>;
   </script>
 
-  <div id='timer'></div>
+  <div class='timer'></div>
 
 <% end %>
 

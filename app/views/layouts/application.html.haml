@@ -29,7 +29,11 @@
         = link_to "Aumodoro", root_url
         .links
           - if current_user
-            = link_to("Start", new_pom_path)
+            - if current_user.current_pom
+              = render 'layouts/mini_timer', :object => current_user.current_pom
+              = link_to("Current", pom_path(current_user.current_pom))
+            - else  
+              = link_to("Start", new_pom_path)
             \.
             = link_to("Projects", projects_path)
             \.

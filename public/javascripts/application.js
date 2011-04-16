@@ -4,7 +4,7 @@ var Aumodoro = {
     seconds_elapsed: 0,
     count_up: false,
     pom_length_in_minutes: 25,
-    display_element: '#timer',
+    display_element: '.timer',
     interval: undefined,
     minutes: 0,
     seconds: 0,
@@ -15,10 +15,11 @@ var Aumodoro = {
       clearInterval(this.interval);
       this.interval = setInterval(function(){
         self.seconds_elapsed = self.seconds_elapsed + 1;
-        self.update_interface();
         
         if (self.seconds_elapsed >= (60*self.pom_length_in_minutes)) {
           self.complete();
+        } else {
+          self.update_interface();
         }
       }, 1000);
       
@@ -77,5 +78,10 @@ $(document).ready(function(){
 		border: '1px solid #333333',
 		buttonClass: 'button'
   });
+  
+  // Timer
+  if($('.timer').length > 0) {
+    Aumodoro.timer.start();
+  }
   
 });
