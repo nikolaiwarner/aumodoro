@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :datetime %><br />
-    <%= f.datetime_select :datetime %>
+    <%= f.label :datetime, "When" %><br />
+    <%= f.text_field :datetime, :class => 'datetimepicker', :value => @pom.datetime || "Now" %>
   </div>
   <div class="field">
-    <%= f.label :project_id %><br />
-    <%= select :pom, :project_id, current_user.projects.all.collect {|p| [ p.name, p.id ] }, {:include_blank => true} %>
+    <%= f.label :project_id, 'Project' %><br />
+    <%= grouped_collection_select :pom, :project_id, @groups, :projects, :name, :id, :name, {:include_blank => true} %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description, 'Notes' %><br />
     <%= f.text_area :description %>
   </div>
   <div class="field">
@@ -28,6 +28,6 @@
     <%= f.text_field :value %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Start Pomodoro' %>
   </div>
 <% end %>

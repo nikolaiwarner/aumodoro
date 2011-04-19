@@ -10,7 +10,7 @@
     
     %script{ :type => "text/javascript", :src => "https://www.google.com/jsapi?key=ABQIAAAALFcVECtS_cckPZPP6gEvtBQNqA7PXSQWBnZcv0WRsLc5vt2EwhRNL4XDqi3F3gVWu6gud-eJy35NIA" }
     :javascript
-      google.load("jquery", "1.5.0");
+      google.load("jquery", "1.5.2");
       google.load("jqueryui", "1.8.9");
       google.load("webfont", "1.0.18");
       google.setOnLoadCallback(function() {
@@ -19,7 +19,7 @@
             families: [ 'Philosopher' ]
           }});
       });
-    = javascript_include_tag 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
+    = javascript_include_tag 'jquery-ui-timepicker-addon', 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
       
 
     = csrf_meta_tag

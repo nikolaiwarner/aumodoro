@@ -15,6 +15,7 @@ class PomsController < ApplicationController
   # GET /poms/1.xml
   def show
     @pom = Pom.find(params[:id])
+    @groups = current_user.groups
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +27,9 @@ class PomsController < ApplicationController
   # GET /poms/new.xml
   def new
     @pom = Pom.new
+    
+    @groups = current_user.groups
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,14 +40,19 @@ class PomsController < ApplicationController
   # GET /poms/1/edit
   def edit
     @pom = Pom.find(params[:id])
+    @groups = current_user.groups
   end
 
   # POST /poms
   # POST /poms.xml
   def create
+    if params[:pom]['datetime'] == 'Now'
+      params[:pom]['datetime'] = Time.now
+    end
+    
     @pom = Pom.new(params[:pom])
     @pom.user_id = current_user.id
-
+    
     respond_to do |format|
       if @pom.save
         format.html { redirect_to(@pom, :notice => 'pom was successfully created.') }

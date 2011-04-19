@@ -6,6 +6,7 @@ var Aumodoro = {
     pom_length_in_minutes: 25,
     display_element: '.timer',
     interval: undefined,
+    to_string: "",
     minutes: 0,
     seconds: 0,
     
@@ -46,7 +47,14 @@ var Aumodoro = {
       if (this.seconds < 10) {
         this.seconds = "0"+this.seconds;
       }
-      $(this.display_element).html(this.minutes+":"+this.seconds);
+      this.to_string = this.minutes+":"+this.seconds;
+      $(this.display_element).html(this.to_string);
+      
+      this.update_title();
+    },
+    
+    update_title: function() {
+      document.title = this.to_string;
     },
     
     init: function(options) {
@@ -66,10 +74,8 @@ $(document).ready(function(){
   // Notifications
   $('.notice, .alert').hide().fadeIn(3000);
   
-  // Datepicker
-  if ($('.datepicker').length > 0) {
-    $('.datepicker').timepicker();
-  }
+  // Datepicker 
+  $('.datetimepicker').datetimepicker();
   
   // Color picker
   $('.color_picker').simpleColor({

@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
-
 <% if @pom.seconds_remaining > 0 %>
 
   <script>
@@ -9,54 +5,11 @@
   </script>
 
   <div class='timer'></div>
+  
+
 
 <% end %>
 
+<br/>
 
-
-
-<hr/>
-
-
-
-<p>
-  <b>Start time:</b>
-  <%= @pom.datetime %>
-</p>
-
-<p>
-  <b>Success:</b>
-  <%= @pom.success %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @pom.user_id %>
-</p>
-
-<p>
-  <b>Project:</b>
-  <%= @pom.project.name if @pom.project %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @pom.description %>
-</p>
-
-<p>
-  <b>Value:</b>
-  <%= @pom.value %>
-</p>
-
-
-
-
-<div class='timer_display'>
-  
-</div>
-
-
-
-<%= link_to 'Edit', edit_pom_path(@pom) %> |
-<%= link_to 'Back', poms_path %>
+<%= render 'form' %>
