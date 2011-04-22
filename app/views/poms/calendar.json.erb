@@ -1,0 +1,14 @@
+[
+  <% @poms.collect do |pom| %>
+  {
+    "id": "<%= pom.id %>",
+    "title": "<%= pom.project.name if pom.project %>",
+    "allDay": false,
+    "start": <%= pom.start_time.to_time.to_i %>,
+    "end": <%= pom.end_time.to_time.to_i %>,
+    "url": "<%= pom_url(pom) %>",
+    "editable": true,
+    "backgroundColor": "<%= pom.color %>"
+  }<%= "," unless pom == @poms.last %>
+  <% end %>
+]

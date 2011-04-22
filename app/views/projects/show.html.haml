@@ -1,0 +1,25 @@
+%h1
+  = title @project.name
+  
+%nav
+  = link_to 'Edit', edit_project_path(@project)
+
+
+%p
+  %b Group:
+  = @project.group.name if @project.group
+%p
+  %b Pom count:
+  = @project.pom_count
+%p
+  %b Description:
+  = @project.description
+%p
+  %b Color:
+  = @project.color
+%p
+  %b Total pom estimate:
+  = @project.total_pom_estimate
+%p
+  %b Priority:
+  = @project.priority

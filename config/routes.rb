@@ -1,7 +1,11 @@
 Aumodoro::Application.routes.draw do
-  resources :poms
+  resources :poms do
+    collection do
+      get 'calendar'
+    end
+  end
 
-  resources :groups
+  resources :groups 
 
   resources :projects
 

@@ -23,9 +23,9 @@ class Project < ActiveRecord::Base
     poms.length
   end
     
-  def color
-    default_color = group.default_color if group
-    default_color ||=  "#000"
+  def default_color
+    thecolor = color
+    thecolor ||= group.default_color if group  
   end
   
   def percent_complete_estimate

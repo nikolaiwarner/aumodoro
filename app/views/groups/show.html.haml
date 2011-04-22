@@ -1,14 +1,8 @@
-%h1 Group Detail
-%p
-  %b Name:
-  = @group.name
-%p
-  %b Default pom value:
-  = @group.default_pom_value
-%p
-  %b Default color value:
-  = @group.default_color
-%p
-  %b Projects
-  - @group.projects.each do |project|
-    = link_to project.name, project
+%h1 
+  = title "#{@group.name} Details"
+
+/= render 'form'
+
+%h2 Projects
+- @group.projects.each do |project|
+  = link_to project.name, project

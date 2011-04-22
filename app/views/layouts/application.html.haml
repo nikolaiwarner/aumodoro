@@ -1,9 +1,10 @@
 !!! 5
 %html
   %head
-    %title Aumodoro
+    %title
+      = yield :title
     
-    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag '/javascripts/fullcalendar/fullcalendar', 'application'
     %link{ :rel => "shortcut icon", :href => '/images/favicon.png' }
     %link{ :rel => "apple-touch-icon", :href => '/images/favicon.png' }
     %link{ :media => "screen", :rel => "stylesheet", :type => "text/css", :href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/smoothness/jquery-ui.css" }
@@ -35,11 +36,11 @@
             - else  
               = link_to("Start", new_pom_path)
             \.
+            = link_to("Pomodoros", poms_path)
+            \.
             = link_to("Projects", projects_path)
             \.
             = link_to("Groups", groups_path)
-            \.
-            = link_to("sign out", destroy_user_session_path)
           - else
             = link_to("sign in", new_user_session_path)
             |
@@ -49,3 +50,5 @@
         = yield
       .footer_push
     .footer(data-role="footer")
+      - if current_user
+        = link_to("sign out", destroy_user_session_path)

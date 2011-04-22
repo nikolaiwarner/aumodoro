@@ -7,13 +7,17 @@ class Pom < ActiveRecord::Base
   scope :datetime_after, lambda { |time| { :conditions => ["datetime > ?", time] } }
   
 
-  def default_color
-    default_color = group.default_color if group
-    default_color ||= project.default_color
-    default_color ||=  "#000"
+  def color
+    project ? project.default_color : "#000"
   end
   
+  def start_time
+    datetime
+  end
   
+  def end_time
+    datetime + user.pom_length_in_minutes.minutes
+  end
   
   def seconds_elapsed
     (Time.now - datetime).to_i

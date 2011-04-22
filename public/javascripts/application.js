@@ -90,4 +90,18 @@ $(document).ready(function(){
     Aumodoro.timer.start();
   }
   
+  // Calendar		
+	$('#calendar').fullCalendar({
+		header: {
+			left: 'prev, next, today',
+			center: 'title',
+			right: 'month,basicWeek,basicDay'
+		},
+		editable: true,
+		events: '/poms/calendar.json'
+	});
+	
+ 
+  
+  
 });

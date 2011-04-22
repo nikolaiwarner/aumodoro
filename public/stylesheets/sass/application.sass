@@ -6,12 +6,12 @@ body
   background-color: #fff
   color: #333
   font-family: 'Philosopher', arial, helvetica, sans-serif
-  font-size: 25px
+  font-size: 20px
   line-height: 25px
 
 p, ol, ul, td, textarea, input, select
   font-family: 'Philosopher', arial, helvetica, sans-serif
-  font-size: 25px
+  font-size: 20px
   line-height: 25px
   
   
@@ -28,7 +28,7 @@ textarea, input
     cursor: pointer
    
     &:hover
-      color: #00AFEE
+      color: #7EA800
   
   &:hover
     border: 1px solid #aaa
@@ -47,13 +47,13 @@ pre
   font-size: 11px
 
 a
-  color: #00AFEE
+  color: #7EA800
   text-decoration: none
   &:visited
-    color: #00AFEE
+    color: #7EA800
   &:hover
     color: #fff
-    background-color: #00AFEE
+    background-color: #7EA800
     
 h1, h2
   text-align: center
@@ -64,7 +64,7 @@ div
 
 .notice, .alert
   text-align: center
-  color: #00AFEE
+  color: #7EA800
   padding: 10px
 
 .field_with_errors
@@ -74,11 +74,11 @@ div
 
 #error_explanation
   width: 450px
-  border: 2px solid #00AFEE
+  border: 2px solid #7EA800
   padding: 7px
   padding-bottom: 0
   margin-bottom: 20px
-  background-color: #00AFEE
+  background-color: #7EA800
   h2
     text-align: left
     font-weight: bold
@@ -86,7 +86,7 @@ div
     font-size: 12px
     margin: -7px
     margin-bottom: 0px
-    background-color: #00AFEE
+    background-color: #7EA800
     color: #fff
   ul li
     font-size: 12px
@@ -107,7 +107,7 @@ div
   margin-bottom: 5px
   border-bottom: 1px solid #ddd
   padding: 10px
-  font-size: 25px
+  font-size: 20px
   color: #333
   
   a
@@ -116,11 +116,12 @@ div
     &:hover
       color: #fff
       
-  .links
+  .links  
+    font-size: 15px
     float: right
     
     a
-      color: #00AFEE
+      color: #7EA800
       
       &:hover
         color: #fff
@@ -148,12 +149,11 @@ div
     padding-right: 10px
     
     
-.nav
+.nav, nav
   clear: both
   text-align: center
-  font-size: 20px
+  font-size: 15px
   width: 700px
-  margin: 0px auto
   padding: 10px 
   
   a
@@ -162,7 +162,7 @@ div
     
 .admin
   text-align: right
-  font-size: 20px
+  font-size: 15px
   width: 700px
   margin: 0px auto
   padding: 10px 
@@ -186,48 +186,7 @@ div
   li
     padding: 5px
     font-family: 'Philosopher', arial, helvetica, sans-serif
-    border-bottom: 1px solid #eee
-
-
-
-.ui-timepicker-div .ui-widget-header
-  margin-bottom: 8px
-.ui-timepicker-div dl
-  text-align: left
-.ui-timepicker-div dl dt
-  height: 25px
-.ui-timepicker-div dl dd
-  margin: -25px 0 10px 65px
-.ui-timepicker-div td 
-  font-size: 90%
-  
-  
-a.friend_needs_interaction
-  background-color: #00AFEE
-  color: #fff
-
-
-.history
-
-  .interaction 
-    height: 20px
-    padding-top: 5px
-    border-top: 1px solid #ddd
-    font-size: 15px
-    clear: both
-    
-    div
-      float: left
-      padding: 5px
-      width: 150px
-  
-    .date
-      color: #000
-      
-    .description
-      width: 350px
-      
-      
+    border-bottom: 1px solid #eee 
 
 
 .friend_portrait
@@ -237,55 +196,6 @@ a.friend_needs_interaction
   img
     outline: 1px solid #aaa
 
-
-
-
-.best_friends
-  text-align: center
-
-
-
-
-.friend_page
-  
-  .info
-    width: 350px
-    float: left
-  
-    .status
-      text-transform: lowercase
-      padding: 10px
-      text-align: center
-    
-
-  .notes
-    width: 350px
-    float: left
-    
-    form
-      width: 350px
-    
-    textarea
-      width: 340px
-      height: 180px
-    
-    .actions
-      padding: 0px
-    
-    
-    
-    
-
-.frequencies_page
-  text-align: center
-  
-  input
-    text-align: center
-  
-
-.interaction_types_page
-  text-align: center
-  
   
   
 form
@@ -298,13 +208,8 @@ form
     
 .dashboard
 
-  .friends
-    text-align: center
-
-
 .hidden
   display: none
-
 
 .pagination
   text-align: center    
@@ -322,6 +227,12 @@ form
   margin: -25px 0 10px 65px
 .ui-timepicker-div td 
   font-size: 90%
+
+
+.timer.mini
+  text-align: right
+  width: 100px
+  float: right
 
 
 

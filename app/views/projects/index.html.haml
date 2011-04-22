@@ -1,0 +1,21 @@
+%h1 
+  = title "Your Projects"
+  
+%nav
+  = link_to 'New Project', new_project_path
+  
+%table
+  %tr
+    %th Name
+    %th Group
+    %th Poms
+    %th % Complete
+    %th Priority
+  - @projects.each do |project|
+    %tr
+      %td= link_to project.name, project
+      %td= project.group.name if project.group
+      %td= project.pom_count
+      %td= project.percent_complete_estimate
+      %td= project.priority
+

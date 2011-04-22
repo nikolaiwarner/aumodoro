@@ -1,50 +1,43 @@
 class PomsController < ApplicationController
-  load_and_authorize_resource
+  #load_and_authorize_resource
+  authorize_resource
 
+  respond_to :html, :json
 
+  def calendar
+    @poms = Pom.where(:user_id => current_user.id).datetime_after(Time.at(params[:start].to_i).utc).datetime_before(Time.at(params[:end].to_i).utc).order('datetime ASC')
+    respond_with(@poms)
+  end  
+  
   def index
-    @poms = Pom.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @poms }
-    end
+    @poms = Pom.where(:user_id => current_user.id).order('datetime ASC').page(params[:page]).per(20)
+    respond_with(@poms)
   end
 
-  # GET /poms/1
-  # GET /poms/1.xml
   def show
-    @pom = Pom.find(params[:id])
+    @pom = Pom.where(:user_id => current_user.id).find(params[:id])
     @groups = current_user.groups
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @pom }
-    end
+    @submit_title = 'Update Pomodoro'
+    respond_with(@pom)
   end
 
-  # GET /poms/new
-  # GET /poms/new.xml
+
   def new
     @pom = Pom.new
-    
     @groups = current_user.groups
-
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @pom }
-    end
+    @submit_title = 'Start Pomodoro'
+    respond_with(@pom)
   end
 
-  # GET /poms/1/edit
+
   def edit
-    @pom = Pom.find(params[:id])
+    @pom = Pom.where(:user_id => current_user.id).find(params[:id])
     @groups = current_user.groups
+    @submit_title = 'Update Pomodoro'
+    respond_with(@pom)
   end
 
-  # POST /poms
-  # POST /poms.xml
+
   def create
     if params[:pom]['datetime'] == 'Now'
       params[:pom]['datetime'] = Time.now
@@ -64,8 +57,7 @@ class PomsController < ApplicationController
     end
   end
 
-  # PUT /poms/1
-  # PUT /poms/1.xml
+
   def update
     @pom = Pom.find(params[:id])
     @pom.user_id = current_user.id
@@ -81,8 +73,7 @@ class PomsController < ApplicationController
     end
   end
 
-  # DELETE /poms/1
-  # DELETE /poms/1.xml
+
   def destroy
     @pom = Pom.find(params[:id])
     @pom.destroy

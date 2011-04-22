@@ -1,0 +1,10 @@
+%h1
+  = title "Your Pomodoro"
+
+- if @pom.seconds_remaining > 0
+  :javascript
+    Aumodoro.timer.seconds_elapsed =  @pom.seconds_elapsed ;
+    .timer
+%br/
+
+= render 'form'
