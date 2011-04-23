@@ -63,9 +63,23 @@ var Aumodoro = {
       this.seconds_elapsed = options.seconds_elapsed || this.seconds_elapsed;
       this.display_element = options.display_element || this.display_element;
     }
-  }
-
+  },
   
+  
+  pomodoro: {
+  
+  },
+
+
+  init: function() {
+    
+    $('.notes_label').toggle(function() {
+      $('.notes').slideDown();
+    }, function() {
+      $('.notes').slideUp();
+    });
+  
+  }
 };
 
 
@@ -93,15 +107,20 @@ $(document).ready(function(){
   // Calendar		
 	$('#calendar').fullCalendar({
 		header: {
-			left: 'prev, next, today',
+			left: 'prev,next today',
 			center: 'title',
-			right: 'month,basicWeek,basicDay'
+			right: 'month,agendaWeek,agendaDay'
 		},
+
+		allDaySlot: false,
+		slotMinutes: 30, 
+		defaultEventMinutes: 30,
+		defaultView: 'agendaDay',
 		editable: true,
 		events: '/poms/calendar.json'
 	});
 	
  
   
-  
+  Aumodoro.init();
 });

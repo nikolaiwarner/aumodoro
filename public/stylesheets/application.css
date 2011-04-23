@@ -159,16 +159,8 @@ div.field, div.actions {
     font-family: "Philosopher", arial, helvetica, sans-serif;
     border-bottom: 1px solid #eeeeee; }
 
-.friend_portrait {
-  padding: 5px;
-  text-align: center; }
-  .friend_portrait img {
-    outline: 1px solid #aaaaaa; }
-
 form {
   width: 700px; }
-  form .actions {
-    padding-top: 20px; }
 
 .hidden {
   display: none; }
@@ -195,3 +187,16 @@ form {
   text-align: right;
   width: 100px;
   float: right; }
+
+.notes_label {
+  cursor: pointer; }
+
+.notes {
+  display: none; }
+
+#calendar {
+  font-family: Helvetica, sans-serif;
+  font-size: 15px; }
+  #calendar h2, #calendar p, #calendar ol, #calendar ul, #calendar td, #calendar textarea, #calendar input, #calendar select {
+    font-family: Helvetica, sans-serif;
+    font-size: 15px; }

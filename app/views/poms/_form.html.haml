@@ -14,9 +14,9 @@
     = f.label :project_id, 'Project: '
     = grouped_collection_select :pom, :project_id, @groups, :projects, :name, :id, :name, {:include_blank => true}
   .field
-    = f.label :description, 'Notes'
+    = f.label :description, 'Notes', :class => "notes_label"
     %br/
-    = f.text_area :description
+    = f.text_area :description, :class => 'notes'
   .field
     = f.label :value, "Time Value: "
     = f.text_field :value
