@@ -11,9 +11,10 @@ class User < ActiveRecord::Base
   has_many :groups
   has_many :projects
   has_many :poms
+  has_many :tasks
   
   
-  ROLES = %w[admin user banned]
+  ROLES = %w[admin user disabled banned]
   
   before_create :set_default_role
 #  before_create :ensure_authentication_token

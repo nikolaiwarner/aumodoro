@@ -1,4 +1,6 @@
 Aumodoro::Application.routes.draw do
+  resources :tasks
+
   resources :poms do
     collection do
       get 'calendar'

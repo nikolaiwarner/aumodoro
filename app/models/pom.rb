@@ -1,7 +1,7 @@
 class Pom < ActiveRecord::Base
   
   belongs_to :user
-  belongs_to :project
+  belongs_to :task
   
   scope :datetime_before, lambda { |time| { :conditions => ["datetime < ?", time] } }
   scope :datetime_after, lambda { |time| { :conditions => ["datetime > ?", time] } }

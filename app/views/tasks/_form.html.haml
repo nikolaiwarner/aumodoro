@@ -1,0 +1,26 @@
+= form_for(@task) do |f|
+  - if @task.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@task.errors.count, "error")
+        prohibited this task from being saved:
+      %ul
+        - @task.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :project_id, 'Project: '
+    = grouped_collection_select :task, :project_id, @groups, :projects, :name, :id, :name, {:include_blank => true}
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :notes
+    %br/
+    = f.text_area :notes
+  .field
+    = f.label :complete
+    %br/
+    = f.check_box :complete
+  .actions
+    = f.submit
