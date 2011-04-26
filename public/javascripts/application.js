@@ -89,7 +89,7 @@ $(document).ready(function(){
   $('.notice, .alert').hide().fadeIn(3000);
   
   // Datepicker 
-  $('.datetimepicker').datetimepicker();
+//  $('.datetimepicker').datetimepicker();
   
   // Color picker
   $('.color_picker').simpleColor({
@@ -121,6 +121,11 @@ $(document).ready(function(){
 	});
 	
  
+  // Layout
+  $(window).resize(function(){
+    $('.columns .left').height($(document).height() - 100);
+    $('.columns .right').width($(document).width() - 300).height($(document).height() - 50);
+  }).resize();
   
   Aumodoro.init();
 });

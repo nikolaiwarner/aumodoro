@@ -1,4 +1,10 @@
-%h1
-  = title @task.name
+- title @task.name
 
 = render 'form'
+
+
+%hr
+
+- @task.poms.each do |pom|
+  = pom.datetime
+  %br

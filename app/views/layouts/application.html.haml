@@ -20,37 +20,48 @@
             families: [ 'Philosopher' ]
           }});
       });
-    = javascript_include_tag 'jquery-ui-timepicker-addon', 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
+    = javascript_include_tag 'uki', 'jquery-ui-timepicker-addon', 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
       
 
     = csrf_meta_tag
   %body
-    .wrapper(data-role="page")
-      .header(data-role="header")
-        = link_to "Aumodoro", root_url
-        .links
-          - if current_user
-            - if current_user.current_pom
-              = render 'layouts/mini_timer', :object => current_user.current_pom
-              = link_to("Current", pom_path(current_user.current_pom))
-            - else  
-              = link_to("Start", new_pom_path)
-            \.
-            = link_to("Pomodoros", poms_path)
-            \.
-            = link_to("Tasks", tasks_path)
-            \.
-            = link_to("Projects", projects_path)
-            \.
-            = link_to("Groups", groups_path)
-          - else
-            = link_to("sign in", new_user_session_path)
-            |
-            = link_to("sign up", new_user_registration_path)
-      .content(data-role="content")
+    .wrapper
+    
+      .header
         = render 'layouts/notices'
-        = yield
-      .footer_push
-    .footer(data-role="footer")
-      - if current_user
-        = link_to("sign out", destroy_user_session_path)
+      .columns
+        .left
+          .logo
+            = link_to "Aumodoro", root_url
+          .links
+            - if current_user
+              - if current_user.current_pom
+                = render 'layouts/mini_timer', :object => current_user.current_pom
+                = link_to("Current", pom_path(current_user.current_pom))
+              - else  
+                = link_to("Start", new_pom_path)
+              %br
+              = link_to("Pomodoros", poms_path)
+              %br
+              = link_to("Tasks", tasks_path)
+              %br
+              = link_to("Projects", projects_path)
+              %br
+              = link_to("Groups", groups_path)
+            - else
+              = link_to("sign in", new_user_session_path)
+              %br
+              = link_to("sign up", new_user_registration_path)
+            
+          .bottom
+            - if current_user
+              = link_to("Sign Out", destroy_user_session_path)
+        
+        .right
+          .title
+            = yield :title
+          .content
+            = yield
+      
+      .footer
+        
