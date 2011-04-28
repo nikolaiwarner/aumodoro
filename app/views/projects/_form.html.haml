@@ -12,9 +12,9 @@
     %br/
     = f.text_field :name
   .field
-    = f.label :group_id
+    = f.label :context_id
     %br/
-    = select :project, :group_id, current_user.groups.all.collect {|p| [ p.name, p.id ] }, {:include_blank => true}
+    = select :project, :context_id, current_user.contexts.all.collect {|p| [ p.name, p.id ] }, {:include_blank => true}
   .field
     = f.label :description
     %br/

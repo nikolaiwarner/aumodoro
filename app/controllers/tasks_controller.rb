@@ -14,7 +14,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.where(:user_id => current_user.id).find(params[:id])
-    @groups = current_user.groups
+    @contexts = current_user.contexts
 
 
     respond_to do |format|
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @groups = current_user.groups
+    @contexts = current_user.contexts
 
 
     respond_to do |format|
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.where(:user_id => current_user.id).find(params[:id])
-    @groups = current_user.groups
+    @contexts = current_user.contexts
 
   end
 

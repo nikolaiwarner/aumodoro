@@ -1,4 +1,4 @@
-class Group < ActiveRecord::Base
+class Context < ActiveRecord::Base
 
   belongs_to :user
   has_many :projects
@@ -10,7 +10,7 @@ class Group < ActiveRecord::Base
   end
   
   def self.find_by_slug name_slug
-    Group.find(name_slug.split('-').first)
+    Context.find(name_slug.split('-').first)
   end
   
   def default_color

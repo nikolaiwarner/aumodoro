@@ -5,7 +5,7 @@ describe "projects/show.html.erb" do
     @project = assign(:project, stub_model(Project,
       :name => "Name",
       :user_id => 1,
-      :group_id => 1,
+      :context_id => 1,
       :session_count => 1,
       :description => "MyText",
       :color => "Color",

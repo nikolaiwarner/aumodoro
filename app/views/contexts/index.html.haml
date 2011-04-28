@@ -1,0 +1,8 @@
+- title "Your Contexts"
+
+%nav
+  = link_to 'New Context', new_context_path
+  
+- @contexts.each do |context|
+  %br/
+  = link_to context.name, context, {:style=>"color:#{context.default_color}"}

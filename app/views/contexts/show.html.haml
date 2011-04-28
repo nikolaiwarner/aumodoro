@@ -1,0 +1,7 @@
+- title "#{@context.name} Details"
+
+/= render 'form'
+
+%h2 Projects
+- @context.projects.each do |project|
+  = link_to project.name, project

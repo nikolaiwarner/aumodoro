@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
 
   belongs_to :user
-  belongs_to :group
+  belongs_to :context
   has_many :poms
   
   validates :name, :presence => true, :uniqueness => {:scope => :user_id}  
@@ -25,7 +25,7 @@ class Project < ActiveRecord::Base
     
   def default_color
     thecolor = color
-    thecolor ||= group.default_color if group  
+    thecolor ||= context.default_color if context  
   end
   
   def percent_complete_estimate

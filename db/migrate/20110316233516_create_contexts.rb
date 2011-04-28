@@ -1,6 +1,6 @@
-class CreateGroups < ActiveRecord::Migration
+class CreateContexts < ActiveRecord::Migration
   def self.up
-    create_table :groups do |t|
+    create_table :contexts do |t|
       t.string :name
       t.float :default_pom_value
       t.string :default_color
@@ -11,6 +11,6 @@ class CreateGroups < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :groups
+    drop_table :contexts
   end
 end

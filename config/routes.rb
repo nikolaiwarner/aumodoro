@@ -7,7 +7,7 @@ Aumodoro::Application.routes.draw do
     end
   end
 
-  resources :groups 
+  resources :contexts 
 
   resources :projects
 

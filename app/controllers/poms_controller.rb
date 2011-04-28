@@ -16,7 +16,7 @@ class PomsController < ApplicationController
 
   def show
     @pom = Pom.where(:user_id => current_user.id).find(params[:id])
-    @groups = current_user.groups
+    @contexts = current_user.contexts
     @submit_title = 'Update Pomodoro'
     respond_with(@pom)
   end
@@ -24,7 +24,7 @@ class PomsController < ApplicationController
 
   def new
     @pom = Pom.new
-    @groups = current_user.groups
+    @contexts = current_user.contexts
     @submit_title = 'Start Pomodoro'
     respond_with(@pom)
   end
@@ -32,7 +32,7 @@ class PomsController < ApplicationController
 
   def edit
     @pom = Pom.where(:user_id => current_user.id).find(params[:id])
-    @groups = current_user.groups
+    @contexts = current_user.contexts
     @submit_title = 'Update Pomodoro'
     respond_with(@pom)
   end

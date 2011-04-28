@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(:version => 20110424033334) do
 
-  create_table "groups", :force => true do |t|
+  create_table "contexts", :force => true do |t|
     t.string   "name"
     t.float    "default_pom_value"
     t.string   "default_color"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20110424033334) do
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "group_id"
+    t.integer  "context_id"
     t.integer  "pom_count"
     t.text     "description"
     t.string   "color"

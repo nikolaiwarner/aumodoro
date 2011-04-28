@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.integer :user_id
-      t.integer :group_id
+      t.integer :context_id
       t.integer :pom_count
       t.text :description
       t.string :color

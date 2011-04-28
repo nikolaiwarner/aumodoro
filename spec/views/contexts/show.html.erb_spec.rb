@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "groups/show.html.erb" do
+describe "contexts/show.html.erb" do
   before(:each) do
-    @group = assign(:group, stub_model(Group,
+    @context = assign(:context, stub_model(Context,
       :name => "Name",
       :default_session_value => 1.5,
       :default_color_value => "",

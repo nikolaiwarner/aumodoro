@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :authentication_token
 
   
-  has_many :groups
+  has_many :contexts
   has_many :projects
   has_many :poms
   has_many :tasks

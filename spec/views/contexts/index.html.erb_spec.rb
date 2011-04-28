@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe "groups/index.html.erb" do
+describe "contexts/index.html.erb" do
   before(:each) do
-    assign(:groups, [
-      stub_model(Group,
+    assign(:contexts, [
+      stub_model(Context,
         :name => "Name",
         :default_session_value => 1.5,
         :default_color_value => "",
         :user_id => 1
       ),
-      stub_model(Group,
+      stub_model(Context,
         :name => "Name",
         :default_session_value => 1.5,
         :default_color_value => "",
@@ -18,7 +18,7 @@ describe "groups/index.html.erb" do
     ])
   end
 
-  it "renders a list of groups" do
+  it "renders a list of contexts" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "Name".to_s, :count => 2
