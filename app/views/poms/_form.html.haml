@@ -12,7 +12,7 @@
     = f.text_field :datetime, :class => 'datetimepicker', :value => @pom.datetime || "Now"
   .field
     = f.label :project_id, 'Project: '
-    = contexted_collection_select :pom, :project_id, @contexts, :projects, :name, :id, :name, {:include_blank => true}
+    = grouped_collection_select :pom, :project_id, @contexts, :projects, :name, :id, :name, {:include_blank => true}
   .field
     = f.label :description, 'Notes', :class => "notes_label"
     %br/

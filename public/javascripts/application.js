@@ -69,6 +69,38 @@ var Aumodoro = {
   pomodoro: {
   
   },
+  
+  
+  
+  
+  
+  
+/*
+  tasks: {
+  
+    index: {
+      var index = uki(
+      { view: 'HSplitPane', rect: '1000 600', anchors: 'top left right bottom', handleWidth: 1,
+        leftMin: 200, rightMin: 400, handlePosition: 200,
+        leftChildViews: [ // scrollable list on the left
+            { view: 'ScrollPane', rect: '200 600', anchors: 'top left right bottom',
+                // with a wrapping box (test background and border)
+                childViews: { view: 'Box', rect: '10 10 180 900002', anchors: 'top left right', background: '#CCC',
+                    // with indierect child list
+                    childViews: { view: 'List', rect: '1 1 178 900000', anchors: 'top left right', 
+                            data: data, rowHeight: 30, id: 'list', throttle: 0, multiselect: true, textSelectable: false }
+                }
+            }
+        ]
+      }).attachTo( document.getElementById('test'), '1000 600' );
+    }
+  
+  },
+*/
+  
+  
+  
+  
 
 
   init: function() {

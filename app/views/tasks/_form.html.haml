@@ -9,7 +9,7 @@
           %li= msg
   .field
     = f.label :project_id, 'Project: '
-    = contexted_collection_select :task, :project_id, @contexts, :projects, :name, :id, :name, {:include_blank => true}
+    = grouped_collection_select :task, :project_id, @contexts, :projects, :name, :id, :name, {:include_blank => true}
   .field
     = f.label :name
     %br/
