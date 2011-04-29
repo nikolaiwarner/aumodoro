@@ -1,3 +1,5 @@
+// bec4b4, d8ae3b, 303934
+
 
 html, body 
   height: 100%
@@ -5,11 +7,13 @@ html, body
 body
   padding: 0px
   margin: 0px  
-  background-color: #7EA800
   color: #333
   font-family: 'Philosopher', arial, helvetica, sans-serif
   font-size: 20px
   line-height: 25px
+  background-color: #7EA800
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8ab66b), color-stop(100%,#c9de96))
+
 
 p, ol, ul, td, textarea, input, select
   font-family: 'Philosopher', arial, helvetica, sans-serif
@@ -21,16 +25,22 @@ p, ol, ul, td, textarea, input, select
 textarea, input
   border: 1px solid #eee
   padding: 5px
+  padding-left: 10px
+  padding-right: 10px
   color: #555
 
   &[type=submit]
-    border: 1px solid #ccc
-    color: #aaa
-    background-color: #fff
     cursor: pointer
+    border: 1px solid #c9de96
+    color: #fff
+    background-color: #c9de96
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(100%,#8ab66b))
+    border-radius: 5px
+    box-shadow: 0px 2px 2px #555
    
     &:hover
-      color: #7EA800
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8ab66b), color-stop(100%,#c9de96))
+      //color: #000
   
   &:hover
     border: 1px solid #aaa
@@ -55,7 +65,7 @@ a
     color: #7EA800
   &:hover
     color: #fff
-    background-color: #7EA800
+    text-decoration: underline
     
 h1, h2
   text-align: center
@@ -119,7 +129,7 @@ div
 
   .left
     float: left
-    width: 250px
+    width: 200px
     
     .logo
       padding-left: 20px
@@ -130,12 +140,23 @@ div
         color: #fff
         font-size: 24px
     
-    .links
+    ul.links
+      list-style: none
       padding-left: 20px
       
-      a
-        color: #333
-        font-size: 15px
+      li
+        width: 200px
+      
+        a
+          color: #333
+          font-size: 15px
+          
+      li.current
+        background: -webkit-gradient(linear, left top, right top, color-stop(10%,transparent), color-stop(100%,#bec4b4))
+        
+        a
+          color: #fff
+          
     
     .bottom
       padding-left: 20px
@@ -147,7 +168,7 @@ div
 
   .right
     float: left
-    width: 400px
+    width: 450px
     overflow: auto
     background-color: #fff
     border-radius: 10px

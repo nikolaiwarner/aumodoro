@@ -1,11 +1,14 @@
 class ContextsController < ApplicationController
   load_and_authorize_resource
   
-  # GET /contexts
-  # GET /contexts.xml
+  before_filter :set_section
+  def set_section
+      @section_name = 'contexts'
+  end
+  
   def index
     @contexts = Context.where(:user_id => current_user.id).order('name ASC').page(params[:page]).per(20)
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @contexts }

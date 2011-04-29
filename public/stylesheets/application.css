@@ -4,11 +4,12 @@ html, body {
 body {
   padding: 0px;
   margin: 0px;
-  background-color: #7ea800;
   color: #333333;
   font-family: "Philosopher", arial, helvetica, sans-serif;
   font-size: 20px;
-  line-height: 25px; }
+  line-height: 25px;
+  background-color: #7ea800;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8ab66b), color-stop(100%, #c9de96)); }
 
 p, ol, ul, td, textarea, input, select {
   font-family: "Philosopher", arial, helvetica, sans-serif;
@@ -18,14 +19,19 @@ p, ol, ul, td, textarea, input, select {
 textarea, input {
   border: 1px solid #eeeeee;
   padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   color: #555555; }
   textarea[type=submit], input[type=submit] {
-    border: 1px solid #cccccc;
-    color: #aaaaaa;
-    background-color: white;
-    cursor: pointer; }
+    cursor: pointer;
+    border: 1px solid #c9de96;
+    color: white;
+    background-color: #c9de96;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(100%, #8ab66b));
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #555555; }
     textarea[type=submit]:hover, input[type=submit]:hover {
-      color: #7ea800; }
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8ab66b), color-stop(100%, #c9de96)); }
   textarea:hover, input:hover {
     border: 1px solid #aaaaaa; }
 
@@ -46,7 +52,7 @@ a {
     color: #7ea800; }
   a:hover {
     color: white;
-    background-color: #7ea800; }
+    text-decoration: underline; }
 
 h1, h2 {
   text-align: center; }
@@ -102,7 +108,7 @@ div.field, div.actions {
 
 .columns .left {
   float: left;
-  width: 250px; }
+  width: 200px; }
   .columns .left .logo {
     padding-left: 20px;
     padding-top: 5px;
@@ -110,11 +116,18 @@ div.field, div.actions {
     .columns .left .logo a {
       color: white;
       font-size: 24px; }
-  .columns .left .links {
+  .columns .left ul.links {
+    list-style: none;
     padding-left: 20px; }
-    .columns .left .links a {
-      color: #333333;
-      font-size: 15px; }
+    .columns .left ul.links li {
+      width: 200px; }
+      .columns .left ul.links li a {
+        color: #333333;
+        font-size: 15px; }
+    .columns .left ul.links li.current {
+      background: -webkit-gradient(linear, left top, right top, color-stop(10%, transparent), color-stop(100%, #bec4b4)); }
+      .columns .left ul.links li.current a {
+        color: white; }
   .columns .left .bottom {
     padding-left: 20px; }
     .columns .left .bottom a {
@@ -122,7 +135,7 @@ div.field, div.actions {
       font-size: 15px; }
 .columns .right {
   float: left;
-  width: 400px;
+  width: 450px;
   overflow: auto;
   background-color: white;
   border-radius: 10px;

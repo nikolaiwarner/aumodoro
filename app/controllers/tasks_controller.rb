@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   load_and_authorize_resource
 
+  before_filter :set_section
+  def set_section
+      @section_name = 'tasks'
+  end
 
   def index
     @tasks = Task.where(:user_id => current_user.id).order('name ASC').page(params[:page]).per(20)

@@ -33,25 +33,27 @@
         .left
           .logo
             = link_to "Aumodoro", root_url
-          .links
+          %ul.links
             - if current_user
               - if current_user.current_pom
-                = render 'layouts/mini_timer', :object => current_user.current_pom
-                = link_to("Current", pom_path(current_user.current_pom))
-              - else  
-                = link_to("Start", new_pom_path)
-              %br
-              = link_to("Pomodoros", poms_path)
-              %br
-              = link_to("Tasks", tasks_path)
-              %br
-              = link_to("Projects", projects_path)
-              %br
-              = link_to("Contexts", contexts_path)
+                %li
+                  = render 'layouts/mini_timer', :object => current_user.current_pom
+              - else
+                %li
+                  = link_to("Start", new_pom_path)
+              %li{:class => @section_name == 'pomodoros' ? 'current':''}
+                = link_to("Pomodoros", poms_path)
+              %li{:class => @section_name == 'tasks' ? 'current':''}
+                = link_to("Tasks", tasks_path)
+              %li{:class => @section_name == 'projects' ? 'current':''}
+                = link_to("Projects", projects_path)
+              %li{:class => @section_name == 'contexts' ? 'current':''}
+                = link_to("Contexts", contexts_path)
             - else
-              = link_to("sign in", new_user_session_path)
-              %br
-              = link_to("sign up", new_user_registration_path)
+              %li
+                = link_to("sign in", new_user_session_path)
+              %li
+                = link_to("sign up", new_user_registration_path)
             
           .bottom
             - if current_user

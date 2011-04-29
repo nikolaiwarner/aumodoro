@@ -155,7 +155,7 @@ $(document).ready(function(){
  
   // Layout
   $(window).resize(function(){
-    $('.columns .left').height($(document).height() - 100);
+    $('.columns .left').height($(document).height() - 50);
     $('.columns .right').width($(document).width() - 300).height($(document).height() - 50);
   }).resize();
   

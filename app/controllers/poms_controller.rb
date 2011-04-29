@@ -3,6 +3,11 @@ class PomsController < ApplicationController
   authorize_resource
 
   respond_to :html, :json
+  
+  before_filter :set_section
+  def set_section
+      @section_name = 'pomodoros'
+  end
 
   def calendar
     @poms = Pom.where(:user_id => current_user.id).datetime_after(Time.at(params[:start].to_i).utc).datetime_before(Time.at(params[:end].to_i).utc).order('datetime ASC')
