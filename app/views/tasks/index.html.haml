@@ -1,23 +1,17 @@
-%h1 Listing tasks
-%table
-  %tr
-    %th Project
-    %th User
-    %th Name
-    %th Notes
-    %th Complete
-    %th
-    %th
-    %th
+- title "Tasks"
+
+
+%ul
   - @tasks.each do |task|
-    %tr
-      %td= task.project_id
-      %td= task.user_id
-      %td= task.name
-      %td= task.notes
-      %td= task.complete
-      %td= link_to 'Show', task
-      %td= link_to 'Edit', edit_task_path(task)
-      %td= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
+    %li
+      = check_box_tag :complete, task.complete, task.complete
+      = task.name
+      = task.project.name if task.project
+      
 %br/
 = link_to 'New Task', new_task_path
+
+
+
+= text_field_tag :name
+= submit_tag 'Save'
