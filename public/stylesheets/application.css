@@ -148,6 +148,23 @@ div.field, div.actions {
   .columns .right .content {
     padding: 10px; }
 
+.actions {
+  float: right; }
+  .actions a {
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #bbbbbb)); }
+    .actions a:hover {
+      border: 1px solid #aaaaaa;
+      text-decoration: none; }
+    .actions a.important {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(100%, #8ab66b)); }
+
 .nav, nav {
   clear: both;
   text-align: center;

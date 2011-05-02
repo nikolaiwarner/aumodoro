@@ -184,7 +184,27 @@ div
         
   
   
+.actions
+  float: right
     
+  a
+    font-size: 15px
+    padding: 5px
+    padding-left: 10px
+    padding-right: 10px
+    color: #000
+    border: 1px solid #bbb
+    border-radius: 4px
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#bbb))
+    
+    &:hover
+      border: 1px solid #aaa
+      text-decoration: none
+      
+    &.important
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(100%,#8ab66b))
+    
+      
     
 .nav, nav
   clear: both

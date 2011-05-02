@@ -1,7 +1,10 @@
 - title "Your Contexts"
 
-%nav
-  = link_to 'New Context', new_context_path
+- content_for :actions do
+  = link_to 'New', new_context_path, :class => 'important'
+  = link_to 'Edit', new_context_path
+    
+
   
 - @contexts.each do |context|
   %br/
