@@ -51,7 +51,6 @@ a {
   a:visited {
     color: #7ea800; }
   a:hover {
-    color: white;
     text-decoration: underline; }
 
 h1, h2 {
@@ -165,6 +164,18 @@ div.field, div.actions {
     .actions a.important {
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(100%, #8ab66b)); }
 
+ul.items {
+  padding: 0px;
+  list-style: none; }
+  ul.items li {
+    position: relative;
+    margin-top: -1px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    padding: 10px; }
+    ul.items li:hover {
+      background-color: #eeffee; }
+
 .nav, nav {
   clear: both;
   text-align: center;
@@ -236,3 +247,10 @@ form {
   #calendar h2, #calendar p, #calendar ol, #calendar ul, #calendar td, #calendar textarea, #calendar input, #calendar select {
     font-family: Helvetica, sans-serif;
     font-size: 15px; }
+
+.color_box {
+  margin: 5px; }
+  .color_box.small {
+    width: 10px;
+    height: 10px;
+    float: left; }

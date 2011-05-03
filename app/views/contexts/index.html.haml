@@ -1,11 +1,12 @@
 - title "Your Contexts"
 
 - content_for :actions do
-  = link_to 'New', new_context_path, :class => 'important'
-  = link_to 'Edit', new_context_path
+  = link_to 'New Context', new_context_path 
+  //, :class => 'important'
     
 
-  
-- @contexts.each do |context|
-  %br/
-  = link_to context.name, context, {:style=>"color:#{context.default_color}"}
+%ul.items
+  - @contexts.each do |context|
+    %li
+      //.color_box.small{ :style=>"background-color:#{context.default_color}"}
+      = link_to context.name, context

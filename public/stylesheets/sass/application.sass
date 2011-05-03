@@ -64,7 +64,6 @@ a
   &:visited
     color: #7EA800
   &:hover
-    color: #fff
     text-decoration: underline
     
 h1, h2
@@ -203,6 +202,25 @@ div
       
     &.important
       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(100%,#8ab66b))
+   
+   
+   
+
+ul.items
+  padding: 0px
+  list-style: none
+
+  li
+    position: relative
+    margin-top: -1px
+    border: 1px solid #bbb
+    border-radius: 5px
+    padding: 10px   
+    
+    &:hover
+      background-color: #efe
+   
+   
     
       
     
@@ -283,3 +301,12 @@ form
   h2, p, ol, ul, td, textarea, input, select
     font-family: Helvetica, sans-serif
     font-size: 15px
+    
+    
+.color_box
+  margin: 5px
+
+  &.small
+    width: 10px
+    height: 10px
+    float: left

@@ -1,7 +1,13 @@
-- title "#{@context.name} Details"
+- title "Context: #{@context.name}"
+
+- content_for :actions do
+  = link_to 'Edit', edit_context_path
 
 /= render 'form'
 
 %h2 Projects
-- @context.projects.each do |project|
-  = link_to project.name, project
+
+%ul.items
+  - @context.projects.each do |project|
+    %li
+      = link_to project.name, project
