@@ -1,5 +1,10 @@
 - title @task.name
 
+- content_for :actions do
+  = link_to 'Start Pomodoro', new_pom_path(:task => @task.id)
+  = link_to 'Edit', edit_task_path
+
+
 = render 'form'
 
 

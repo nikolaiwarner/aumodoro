@@ -2,7 +2,8 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :context
-  has_many :poms
+  has_many :tasks
+#  has_many :poms
   
   validates :name, :presence => true, :uniqueness => {:scope => :user_id}  
   
@@ -20,7 +21,11 @@ class Project < ActiveRecord::Base
   end
     
   def pom_count
-    poms.length
+    poms = 0
+    tasks.each do |task|
+      poms = poms + task.poms.count
+    end
+    poms
   end
     
   def default_color

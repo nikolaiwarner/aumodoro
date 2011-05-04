@@ -1,11 +1,14 @@
 - title "Tasks"
 
+- content_for :actions do
+  = link_to 'New Task', new_task_path
+
 
 %ul.items
   - @tasks.each do |task|
     %li
       = check_box_tag :complete, task.complete, task.complete
-      = task.name
+      = link_to task.name, task_path(task)
       = task.project.name if task.project
       
 %br/

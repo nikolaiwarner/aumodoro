@@ -1,15 +1,13 @@
 - title @project.name
-  
-%nav
-  = link_to 'Edit', edit_project_path(@project)
+
+- content_for :actions do
+  = link_to 'Edit', edit_project_path
 
 
 %p
   %b Context:
   = @project.context.name if @project.context
-%p
-  %b Pom count:
-  = @project.pom_count
+  
 %p
   %b Description:
   = @project.description

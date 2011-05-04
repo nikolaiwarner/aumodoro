@@ -11,8 +11,8 @@
     = f.label :datetime, "When: "
     = f.text_field :datetime, :class => 'datetimepicker', :value => @pom.datetime || "Now"
   .field
-    = f.label :project_id, 'Project: '
-    = grouped_collection_select :pom, :project_id, @contexts, :projects, :name, :id, :name, {:include_blank => true}
+    = f.label :task_id, 'Task: '
+    = grouped_collection_select :pom, :task_id, @projects, :tasks, :name, :id, :name, {:include_blank => true}
   .field
     = f.label :description, 'Notes', :class => "notes_label"
     %br/
