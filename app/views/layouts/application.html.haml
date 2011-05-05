@@ -7,12 +7,12 @@
     = stylesheet_link_tag '/javascripts/fullcalendar/fullcalendar', 'application'
     %link{ :rel => "shortcut icon", :href => '/images/favicon.png' }
     %link{ :rel => "apple-touch-icon", :href => '/images/favicon.png' }
-    %link{ :media => "screen", :rel => "stylesheet", :type => "text/css", :href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/smoothness/jquery-ui.css" }
+    //%link{ :media => "screen", :rel => "stylesheet", :type => "text/css", :href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/smoothness/jquery-ui.css" }
     
     %script{ :type => "text/javascript", :src => "https://www.google.com/jsapi?key=ABQIAAAALFcVECtS_cckPZPP6gEvtBQNqA7PXSQWBnZcv0WRsLc5vt2EwhRNL4XDqi3F3gVWu6gud-eJy35NIA" }
     :javascript
-      google.load("jquery", "1.5.2");
-      google.load("jqueryui", "1.8.9");
+      //google.load("jquery", "1.5.2");
+      //google.load("jqueryui", "1.8.9");
       google.load("webfont", "1.0.18");
       google.setOnLoadCallback(function() {
         WebFont.load({
@@ -20,7 +20,7 @@
             families: [ 'Philosopher' ]
           }});
       });
-    = javascript_include_tag 'uki', 'jquery-ui-timepicker-addon', 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
+    = javascript_include_tag 'jquery-1.5.2.min', 'jquery-ui-timepicker-addon', 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
       
 
     = csrf_meta_tag
@@ -49,6 +49,8 @@
                 = link_to("Projects", projects_path)
               %li{:class => @section_name == 'contexts' ? 'current':''}
                 = link_to("Contexts", contexts_path)
+              %li{:class => @section_name == 'settings' ? 'current':''}
+                = link_to("Settings", settings_path)
             - else
               %li
                 = link_to("sign in", new_user_session_path)

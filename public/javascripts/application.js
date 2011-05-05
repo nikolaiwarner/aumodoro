@@ -76,6 +76,9 @@ var Aumodoro = {
     var self = this;
     if (window.webkitNotifications) {
       if (window.webkitNotifications.checkPermission() === 0) {
+        if (url === undefined) {
+          url = '/images/favicon.png';
+        }
         var notification = window.webkitNotifications.createNotification(url, title, body);
         notification.show();
         setTimeout(function(){
@@ -175,6 +178,16 @@ $(document).ready(function(){
     $('.columns .left').height($(document).height() - 50);
     $('.columns .right').width($(document).width() - 300).height($(document).height() - 50);
   }).resize();
+  
+  
+  // Settings
+  $('#enable_desktop_notifictions').click(function(){ 
+    window.webkitNotifications.requestPermission(function(){
+      Aumodoro.notify(undefined, 'Aumodoro', 'Desktop notification settings updated.');
+    });
+  });
+  
+  
   
   Aumodoro.init();
 });

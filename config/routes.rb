@@ -13,6 +13,11 @@ Aumodoro::Application.routes.draw do
 
   devise_for :users
   
+  
+  
+  match 'settings' => 'high_voltage/pages#show', :id => 'settings'
+  
+  
   root :to => 'high_voltage/pages#show', :id => 'home'
 
   # The priority is based upon order of creation:
