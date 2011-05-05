@@ -69,9 +69,26 @@ var Aumodoro = {
   pomodoro: {
   
   },
-  
-  
-  
+
+
+
+  notify: function(url, title, body) {
+    var self = this;
+    if (window.webkitNotifications) {
+      if (window.webkitNotifications.checkPermission() === 0) {
+        var notification = window.webkitNotifications.createNotification(url, title, body);
+        notification.show();
+        setTimeout(function(){
+          notification.cancel();
+        }, '10000');
+      } else {
+        window.webkitNotifications.requestPermission(function() {
+          self.notify(url, title, body);
+        });
+      }
+    }
+  },
+
   
   
   
