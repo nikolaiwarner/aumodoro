@@ -64,11 +64,6 @@ var Aumodoro = {
       this.display_element = options.display_element || this.display_element;
     }
   },
-  
-  
-  pomodoro: {
-  
-  },
 
 
 
@@ -92,35 +87,46 @@ var Aumodoro = {
     }
   },
 
+
+
+  sounds: {
   
-  
-  
-/*
-  tasks: {
-  
-    index: {
-      var index = uki(
-      { view: 'HSplitPane', rect: '1000 600', anchors: 'top left right bottom', handleWidth: 1,
-        leftMin: 200, rightMin: 400, handlePosition: 200,
-        leftChildViews: [ // scrollable list on the left
-            { view: 'ScrollPane', rect: '200 600', anchors: 'top left right bottom',
-                // with a wrapping box (test background and border)
-                childViews: { view: 'Box', rect: '10 10 180 900002', anchors: 'top left right', background: '#CCC',
-                    // with indierect child list
-                    childViews: { view: 'List', rect: '1 1 178 900000', anchors: 'top left right', 
-                            data: data, rowHeight: 30, id: 'list', throttle: 0, multiselect: true, textSelectable: false }
-                }
-            }
-        ]
-      }).attachTo( document.getElementById('test'), '1000 600' );
+    enabled: false,
+    audio_files_path: '/sounds/',
+    audio_element: document.createElement('audio'),
+    
+    play: function(sound_name) {
+      if (this.enabled && this.can_play_audio()) {
+        var src = this.audio_files_path + sound_name + this.file_extension();
+        this.audio_element.src = src;
+        this.audio_element.play();
+      }
+    },
+    
+    pause: function() {
+      if (this.can_play_audio()) {
+        this.audio_element.pause();
+      }
+    },
+    
+    can_play_audio: function() {
+      return !!this.audio_element.canPlayType;
+    },
+    
+    file_extension: function() {
+      var extension = '';
+      if (this.audio_element.canPlayType('audio/ogg; codecs="vorbis"') !== "") {
+        extension = '.ogg';
+      } else if (this.audio_element.canPlayType('audio/mpeg') !== "") {
+        extension = '.mp3';
+      };
+      return extension;
     }
-  
+    
   },
-*/
+
   
-  
-  
-  
+    
 
 
   init: function() {
