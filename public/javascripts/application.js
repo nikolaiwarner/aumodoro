@@ -99,6 +99,7 @@ var Aumodoro = {
       if (this.enabled && this.can_play_audio()) {
         var src = this.audio_files_path + sound_name + this.file_extension();
         this.audio_element.src = src;
+        this.audio_element.load();
         this.audio_element.play();
       }
     },

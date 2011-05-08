@@ -11,11 +11,9 @@ Aumodoro::Application.routes.draw do
 
   resources :projects
 
-  devise_for :users
+  devise_for :users, :controllers => { :users => 'users' }
   
-  
-  
-  match 'settings' => 'high_voltage/pages#show', :id => 'settings'
+  get "/settings", :to => "users#settings"
   
   
   root :to => 'high_voltage/pages#show', :id => 'home'
