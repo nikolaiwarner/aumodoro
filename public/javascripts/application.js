@@ -30,6 +30,10 @@ var Aumodoro = {
     complete: function() {
       clearInterval(this.interval);
       this.seconds_elapsed = 0;
+      
+      Aumodoro.sounds.play('bell');
+      Aumodoro.notify(undefined, 'Your Pomodoro is complete.', 'Great job! Let\'s take a short break and perhaps do another.');
+      
       // ! auto update pom record end
     },
     
@@ -127,7 +131,7 @@ var Aumodoro = {
   },
 
   
-    
+  
 
 
   init: function() {
