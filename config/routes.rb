@@ -13,6 +13,12 @@ Aumodoro::Application.routes.draw do
 
   devise_for :users, :controllers => { :users => 'users' }
   
+  resources :users do
+    collection do
+      get '/settings'
+    end
+  end
+  
   get "/settings", :to => "users#settings"
   
   

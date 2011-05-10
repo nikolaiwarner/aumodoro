@@ -40,13 +40,6 @@ class User < ActiveRecord::Base
 #     Frequency.create!(:user_id => self.id, :name => "Quarterly", :number_of_days => 90)
 #     Frequency.create!(:user_id => self.id, :name => "Yearly", :number_of_days => 365)  
   end
-  
-  
-  def to_param
-    username
-  end
-  
-  
     
   
   def pom_length_in_minutes

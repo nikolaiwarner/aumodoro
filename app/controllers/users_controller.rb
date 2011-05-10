@@ -7,6 +7,14 @@ class UsersController < ApplicationController
   end
   
   
+  def index
+    @users = User.order('created_at DESC')
+  end
+  
+  def show
+    
+  end
+  
   def settings
     @user = current_user
   end
