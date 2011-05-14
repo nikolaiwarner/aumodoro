@@ -1,4 +1,6 @@
-- title "Context: #{@context.name}"
+- back_link "Back to All", contexts_path
+
+- title "#{@context.name} Context"
 
 - content_for :actions do
   = link_to 'Edit', edit_context_path
