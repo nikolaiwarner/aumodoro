@@ -49,7 +49,7 @@
                 = link_to("Projects", projects_path)
               %li{:class => @section_name == 'contexts' ? 'current':''}
                 = link_to("Contexts", contexts_path)
-              %li{:class => @section_name == 'settings' ? 'current':''}
+              %li{:class => @section_name == 'account' ? 'current':''}
                 = link_to("Settings", settings_path)
             - else
               %li
@@ -62,8 +62,9 @@
               = link_to("Sign Out", destroy_user_session_path)
         
         .right
-          .title
-            = yield :back_link
+          .navbar
+            .back
+              = yield :back_link
             = yield :title
             .actions
               = yield :actions
