@@ -24,5 +24,6 @@
     .field
       = f.label :success, "Successfully Completed?: "
       = f.check_box :success
-  .actions
-    = f.submit @submit_title
+    
+- content_for :actions do
+  = link_to @submit_title, poms_path, :class => 'important'

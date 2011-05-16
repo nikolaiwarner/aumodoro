@@ -1,9 +1,7 @@
 - title "Your Pomodoros"
 
-%nav
-  = link_to 'Start A Pomodoro', new_pom_path
-  = link_to 'Schedule A Pomodoro', new_pom_path
-
+- content_for :actions do
+  = link_to 'Start or Schedule A Pomodoro', new_pom_path
 
 
 #calendar
