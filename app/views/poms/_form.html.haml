@@ -24,6 +24,9 @@
     .field
       = f.label :success, "Successfully Completed?: "
       = f.check_box :success
+  .actions
+  // = f.submit
     
 - content_for :actions do
-  = link_to @submit_title, poms_path, :class => 'important'
+  %a{ :href => '#', :class => 'important', :onclick => "$('form').submit();"}
+    = @submit_title
