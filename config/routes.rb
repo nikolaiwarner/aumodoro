@@ -19,7 +19,7 @@ Aumodoro::Application.routes.draw do
     end
   end
   
-  get "/settings", :to => "users#settings"
+  match "/settings", :to => "users#settings"
   
   
   root :to => 'high_voltage/pages#show', :id => 'home'

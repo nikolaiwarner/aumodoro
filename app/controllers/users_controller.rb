@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
 
   before_filter :set_section
   def set_section
@@ -12,11 +12,17 @@ class UsersController < ApplicationController
   end
   
   def show
-    
+    @user = User.find(params[:id])
   end
   
   def settings
     @user = current_user
+  end
+  
+  
+  def update
+    current_user.update_attributes(params[:user])
+    redirect_to :action => 'settings'
   end
   
 end

@@ -1,11 +1,14 @@
 - title "Settings"
 
 
+= form_for(@user) do |f|
 
-= check_box_tag 'enable_desktop_notifictions', current_user.id
-Show Desktop Notifications (Only currently available on Google Chrome)
+  = f.check_box :enable_desktop_notifications
+  Show Desktop Notifications (Only currently available on Google Chrome)
 
-%br
+  = f.check_box :enable_sounds
+  Enable Timer Sounds
 
-= check_box_tag 'enable_sounds', current_user.id
-Enable Timer Sounds
+
+  .actions
+    = f.submit

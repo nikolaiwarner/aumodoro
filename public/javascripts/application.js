@@ -70,10 +70,11 @@ var Aumodoro = {
   },
 
 
-
+  enable_desktop_notifications: false,
+  
   notify: function(url, title, body) {
-    var self = this;
-    if (window.webkitNotifications) {
+    var self = this;    
+    if (this.enable_notifications && window.webkitNotifications) {
       if (window.webkitNotifications.checkPermission() === 0) {
         if (url === undefined) {
           url = '/images/favicon.png';
@@ -152,7 +153,7 @@ $(document).ready(function(){
   $('.notice, .alert').hide().fadeIn(3000);
   
   // Datepicker 
-//  $('.datetimepicker').datetimepicker();
+  $('.datetimepicker').datetimepicker();
   
   // Color picker
   $('.color_picker').simpleColor({
@@ -196,8 +197,13 @@ $(document).ready(function(){
     window.webkitNotifications.requestPermission(function(){
       Aumodoro.notify(undefined, 'Aumodoro', 'Desktop notification settings updated.');
     });
-  });
+   // $.post('/users/update', {enable_desktop_notifications: true});
+  })
   
+  $('#enable_sounds').click(function(){ 
+    Aumodoro.sounds.enabled = $('#enable_sounds').is(':checked');
+    //$.post('/users/update', {enable_sounds: true});
+  })
   
   
   Aumodoro.init();

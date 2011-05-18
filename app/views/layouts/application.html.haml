@@ -22,6 +22,11 @@
       });
     = javascript_include_tag 'jquery-ui-timepicker-addon', 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
       
+    - if current_user
+      %script{ :type => "text/javascript" }
+        = "Aumodoro.sounds.enabled = #{current_user.enable_sounds ? 'true' : 'false'};"
+        = "Aumodoro.enable_desktop_notifications = #{current_user.enable_desktop_notifications ? 'true' : 'false'};"
+      
 
     = csrf_meta_tag
   %body
