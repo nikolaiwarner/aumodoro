@@ -1,16 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.7'
 gem 'haml'
 gem 'devise'
 gem 'cancan'
-gem 'rmagick'
-gem 'carrierwave'
-gem 'fog'
+#gem 'rmagick'
+#gem 'carrierwave'
+#gem 'fog'
 gem 'high_voltage'
 gem 'meta_where'
 gem 'jquery-rails', '>= 0.2.6'
-gem 'kaminari'
+gem 'kaminari' # for pagination
 
 gem 'sqlite3'
 

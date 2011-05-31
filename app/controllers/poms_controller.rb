@@ -23,7 +23,7 @@ class PomsController < ApplicationController
     @pom = Pom.where(:user_id => current_user.id).find(params[:id])
     @contexts = current_user.contexts
     @projects = current_user.projects
-    @submit_title = 'Update Pomodoro'
+    @submit_title = 'Update'
     respond_with(@pom)
   end
 
@@ -32,7 +32,7 @@ class PomsController < ApplicationController
     @pom = Pom.new
     @contexts = current_user.contexts
     @projects = current_user.projects
-    @submit_title = 'Start Pomodoro'
+    @submit_title = 'Start'
     respond_with(@pom)
   end
 
@@ -41,7 +41,7 @@ class PomsController < ApplicationController
     @pom = Pom.where(:user_id => current_user.id).find(params[:id])
     @contexts = current_user.contexts
     @projects = current_user.projects
-    @submit_title = 'Update Pomodoro'
+    @submit_title = 'Update'
     respond_with(@pom)
   end
 
