@@ -3,16 +3,16 @@
   %head
     %title
       = yield :title
-    
-    = stylesheet_link_tag '/javascripts/fullcalendar/fullcalendar', 'application'
-    %link{ :rel => "shortcut icon", :href => '/images/favicon.png' }
-    %link{ :rel => "apple-touch-icon", :href => '/images/favicon.png' }
+      
+    = favicon_link_tag
+
+    = stylesheet_link_tag    'application' 
+    = javascript_include_tag 'application' 
+
     %link{ :media => "screen", :rel => "stylesheet", :type => "text/css", :href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/smoothness/jquery-ui.css" }
     
     %script{ :type => "text/javascript", :src => "https://www.google.com/jsapi?key=ABQIAAAALFcVECtS_cckPZPP6gEvtBQNqA7PXSQWBnZcv0WRsLc5vt2EwhRNL4XDqi3F3gVWu6gud-eJy35NIA" }
     :javascript
-      google.load("jquery", "1.6.0");
-      google.load("jqueryui", "1.8.9");
       google.load("webfont", "1.0.18");
       google.setOnLoadCallback(function() {
         WebFont.load({
@@ -20,7 +20,6 @@
             families: [ 'Philosopher' ]
           }});
       });
-    = javascript_include_tag 'jquery-ui-timepicker-addon', 'jquery.simple-color.min', 'fullcalendar/fullcalendar.min', 'application'
       
     - if current_user
       %script{ :type => "text/javascript" }

@@ -1,3 +1,16 @@
+/*
+ 
+ *= require 'jquery-1.6.1.min'
+ *= require 'jquery-ui-1.8.13.custom.min'
+ *= require 'jquery-ui-timepicker-addon'
+ *= require 'jquery.simple-color.min'
+ *= require 'fullcalendar/fullcalendar.min'
+ *= require_self
+ 
+*/
+
+
+
 var Aumodoro = {
 
   timer: {

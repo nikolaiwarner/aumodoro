@@ -1,16 +1,15 @@
 Aumodoro::Application.routes.draw do
-  resources :tasks
 
+  resources :tasks
+  resources :contexts 
+  resources :projects
+  
   resources :poms do
     collection do
       get 'calendar'
     end
   end
-
-  resources :contexts 
-
-  resources :projects
-
+  
   devise_for :users, :controllers => { :users => 'users' }
   
   resources :users do
@@ -21,8 +20,8 @@ Aumodoro::Application.routes.draw do
   
   match "/settings", :to => "users#settings"
   
-  
   root :to => 'high_voltage/pages#show', :id => 'home'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -73,7 +72,7 @@ Aumodoro::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
